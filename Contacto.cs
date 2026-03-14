@@ -14,7 +14,7 @@ namespace agendaSQLite
         public string Direccion {set; get;}
         public string Localidad { set; get;}
         public string Email {set; get;}
-        public DateOnly Fecha {set; get;}
+        public DateOnly? Fecha {set; get;}
 
         public Contacto()
         {

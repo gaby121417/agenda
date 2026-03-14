@@ -28,6 +28,27 @@ internal class Program
             Console.WriteLine(con.ToString());
         }
 
+        int id = 1;
+        Contacto? contacto;
+
+        contacto = database.GetContacto(id);
+
+        if(contacto != null)
+        {
+            Console.WriteLine(contacto.ToString());
+            contacto.Fecha = DateOnly.FromDateTime(DateTime.ParseExact("14/03/2026", "dd/MM/yyyy", null));
+            database.UpdateContacto(contacto);
+            Console.WriteLine(contacto.Fecha.ToString());
+        }
+        else
+        {
+            Console.WriteLine("No se encontró el contacto");
+        }
+
+        
+
+
+
         Console.WriteLine("¡Termine!");
     }
 }

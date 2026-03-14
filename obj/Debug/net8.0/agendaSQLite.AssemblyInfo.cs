@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("agendaSQLite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86160af283a3b14fdddc7900a8647c3f4bec823c")]
 [assembly: System.Reflection.AssemblyProductAttribute("agendaSQLite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("agendaSQLite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
