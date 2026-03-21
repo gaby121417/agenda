@@ -15,7 +15,7 @@ internal class Program
         database.InsertarContacto(contacto);
         */
 
-        SQLiteDatabase database = new SQLiteDatabase("agenda.db");
+        SQLiteDatabase database = new SQLiteDatabase("agenda_nueva.db");
 
         //Contacto contacto = new Contacto("Juan Carlos", "Flores Paulín", "5513612622", "San Cristobal", "Ecatepec","juan.flores@sancarlos.edu.mx", new DateOnly(2026, 03, 07));
 
