@@ -925,25 +925,24 @@
     ]
   },
   "packageFolders": {
-    "/home/carlos/.nuget/packages/": {}
+    "C:\\Users\\gabit\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/carlos/AppDevProjects/VSCProjects/agendaSQLite/agendaSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\gabit\\OneDrive\\Documentos\\agendaSQLite\\agendaSQLite.csproj",
       "projectName": "agendaSQLite",
-      "projectPath": "/home/carlos/AppDevProjects/VSCProjects/agendaSQLite/agendaSQLite.csproj",
-      "packagesPath": "/home/carlos/.nuget/packages/",
-      "outputPath": "/home/carlos/AppDevProjects/VSCProjects/agendaSQLite/obj/",
+      "projectPath": "C:\\Users\\gabit\\OneDrive\\Documentos\\agendaSQLite\\agendaSQLite.csproj",
+      "packagesPath": "C:\\Users\\gabit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gabit\\OneDrive\\Documentos\\agendaSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/carlos/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\gabit\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -961,7 +960,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -987,12 +987,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
