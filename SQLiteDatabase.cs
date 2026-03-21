@@ -135,12 +135,10 @@ namespace agendaSQLite
                     contacto.Direccion = sdr.GetString(4);
                     contacto.Localidad = sdr.GetString(5);
                     contacto.Email = sdr.GetString(6);
-                    /*
                     if(sdr.GetString(7) != String.Empty)
                     {
-                        DateOnly.FromDateTime(DateTime.ParseExact(sdr.GetString(7), "dd-MM-yyyy", null));
+                        contacto.Fecha = DateOnly.FromDateTime(DateTime.ParseExact(sdr.GetString(7), "dd/MM/yyyy", null));
                     }
-                    */
                     contactos.Add(contacto);
                 }
          
@@ -154,26 +152,94 @@ namespace agendaSQLite
 
         }
 
+        public Contacto? GetContacto(int id)
+        {
+            Contacto? contacto = null;
+            OpenConnect();
+            try
+            {
+                string query = "SELECT * FROM Contactos WHERE id_contactos=@id;";
+
+                using var cmd = new SqliteCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.Prepare();
+
+                SqliteDataReader sdr = cmd.ExecuteReader();
+
+                if(sdr.Read())
+                {
+                    contacto = new Contacto();
+                    contacto.Id_contacto = sdr.GetInt32(0);
+                    contacto.Nombre = sdr.GetString(1);
+                    contacto.Apellido = sdr.GetString(2);
+                    contacto.Telefono = sdr.GetString(3);
+                    contacto.Direccion = sdr.GetString(4);
+                    contacto.Localidad = sdr.GetString(5);
+                    contacto.Email = sdr.GetString(6);
+                    //Console.WriteLine(sdr.GetString(7));
+                    if(sdr.GetString(7) != String.Empty)
+                    {
+                        contacto.Fecha = DateOnly.FromDateTime(DateTime.ParseExact(sdr.GetString(7), "dd/MM/yyyy", null));
+                    }
+                    else
+                    {
+                        contacto.Fecha = null;
+                    }
+                    
+                }
+            }
+            catch (SqliteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            CloseConnect();
+
+            return contacto;
+        }
+
+        public void UpdateContacto(Contacto contacto)
+        {
+            OpenConnect();
+            try
+            {
+                string query = "UPDATE Contactos SET nombre = @nombre, apellido =@apellido, telefono=@telefono, direccion=@direccion, localidad=@localidad, email=@email, fecha=@fecha WHERE id_contactos=@id;";
+
+                using var cmd = new SqliteCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@id", contacto.Id_contacto);
+
+                cmd.Parameters.AddWithValue("@nombre", contacto.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", contacto.Apellido);
+                cmd.Parameters.AddWithValue("@telefono", contacto.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", contacto.Direccion);
+                cmd.Parameters.AddWithValue("@localidad", contacto.Localidad);
+                cmd.Parameters.AddWithValue("@email", contacto.Email);
+                cmd.Parameters.AddWithValue("@fecha", contacto.Fecha.ToString());
+
+                cmd.Prepare();                
+                cmd.ExecuteNonQuery();
+
+                
+            }
+            catch (SqliteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            CloseConnect();
+        }
+
         public void DeleteContacto(int id)
         {
             throw new NotImplementedException();
         }
-
-        
-
-        public Contacto? GetContacto(int id)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
         public List<Contacto> SearchFirtsOrLastName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateContacto(Contacto contacto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

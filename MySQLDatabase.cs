@@ -79,7 +79,7 @@ namespace agendaSQLite
                 cmd.Parameters.AddWithValue("@direccion", contacto.Direccion);
                 cmd.Parameters.AddWithValue("@localidad", contacto.Localidad);
                 cmd.Parameters.AddWithValue("@email", contacto.Email);
-                cmd.Parameters.AddWithValue("@fecha", contacto.Fecha.ToString("o", CultureInfo.InvariantCulture));
+                //cmd.Parameters.AddWithValue("@fecha", contacto.Fecha.ToString("o", CultureInfo.InvariantCulture));
 
                 cmd.Prepare();                
                 cmd.ExecuteNonQuery();
