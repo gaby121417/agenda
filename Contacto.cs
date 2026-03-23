@@ -24,7 +24,7 @@ namespace agendaSQLite
             this.Direccion = "";
             this.Localidad = "";
             this.Email = "";
-            //this.Fecha = DateTime.Now();
+            this.Fecha = DateOnly.FromDateTime(DateTime.Today);
         }
 
         public Contacto(string nombre, string apellido, string telefono, 
